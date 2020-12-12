@@ -5,6 +5,7 @@ import classes from './ContactData.module.css';
 import axios from "../../../axios-orders";
 import  Input from '../../../components/UI/Input/Input';
 import createFormField  from '../../../helpers/formFIeldsObjectsCreator'
+import { connect } from "react-redux";
 
 
 class ContactData extends Component {
@@ -29,7 +30,7 @@ class ContactData extends Component {
     }
 
     const order = {
-      ingredients: this.props.ingredients,
+      ingredients: this.props.ing,
       price: this.props.price,
       orderData: formDate
     }
@@ -117,4 +118,11 @@ class ContactData extends Component {
   }
 }
 
-export default ContactData;
+const mapStateToProps = state => {
+  return {
+    ing: state.ingredients,
+    price: state.totalPrice
+  }
+}
+
+export default connect(mapStateToProps)(ContactData);
