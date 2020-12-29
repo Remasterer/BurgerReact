@@ -15,13 +15,22 @@
 }
 .Button:first-of-type {
     margin-left: 0;
-    padding-left: 0;
 }
 
 .Success {
     color: #5C9210;
 }
+.Success-type-2 {
+  color: #fff;
+  background: #228c1d;
+}
 
 .Danger {
     color: #944317;
 }
+
+.Danger-type-2 {
+  background-color:  #E3242B;
+  color: #ffffff;
+}
+

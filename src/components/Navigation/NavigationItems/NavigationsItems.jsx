@@ -1,17 +1,18 @@
 import React from 'react';
 import classes from './NavigationItems.module.css'
 import NavigationItem from "./NavigationItem/NavigationItem";
-const NavigationsItems = () => (
+
+const NavigationsItems = ({isAuthenticated}) => (
   <ul className={classes.NavigationItems}>
-        <NavigationItem
-          link="/burger">
-          Birger builder
-        </NavigationItem>
-      <NavigationItem
-        link="/orders">
-        Orders
-      </NavigationItem>
-  </ul>
+    <NavigationItem link="/burger">Burger builder</NavigationItem>
+    { isAuthenticated
+      ?  <NavigationItem link="/orders">Order</NavigationItem>
+      : null }
+
+    { !isAuthenticated
+      ? <NavigationItem link="/auth">Authentication</NavigationItem>
+      :  <NavigationItem link="/logout">Logout</NavigationItem>}
+      </ul>
 );
 
 export default NavigationsItems;

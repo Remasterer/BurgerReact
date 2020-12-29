@@ -1,0 +1,21 @@
+.Auth{
+  margin: 20px auto;
+  width: 80%;
+  text-align: center;
+  box-shadow: 0 2px 3px #ccc;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.ErrorMessage {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-transform: capitalize;
+  background: #bf3213;
+  padding: .5rem 0;
+}
+@media (min-width: 600px) {
+  .Auth {
+    width: 500px;
+  }
+}

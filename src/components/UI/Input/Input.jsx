@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './Input.module.css';
 
-const  input = ({elementType,  elementConfig,  value, changed, invalid, shouldValidate, touched}) => {
+const  input = ({elementType,  elementConfig,  value, changed, invalid, shouldValidate, touched, validationMessage}) => {
   let inputElement = null,  validationError = null;
   const inputClasses = [classes.InputElement];
 
@@ -10,7 +10,7 @@ const  input = ({elementType,  elementConfig,  value, changed, invalid, shouldVa
   }
 
   if (invalid && touched) {
-    validationError = <p className={classes.ValidationError}>Please enter a valid value!</p>;
+    validationError = <p className={classes.ValidationError}>{validationMessage}</p>;
   }
 
   switch (elementType) {

@@ -28,6 +28,7 @@ const BurgerIngredient = ({type}) => {
         case ('bacon'):
             ingridient = <div className={classes.Bacon}></div>
             break;
+      default: ingridient = null;
     }
     return ingridient;
 };
