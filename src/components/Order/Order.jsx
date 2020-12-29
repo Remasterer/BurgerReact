@@ -1,7 +1,8 @@
 import React from 'react';
 import classes from './Order.module.css';
-
-const Order = ({ price, ingredients }) => {
+import Button from "../UI/Button/Button";
+import { withRouter} from "react-router-dom";
+const Order = ({ price, ingredients, deleteOrderHandler, id,  history}) => {
   const  transformedIngredients = [];
   for (const ingredientName in ingredients) {
     transformedIngredients.push(
@@ -22,12 +23,21 @@ const Order = ({ price, ingredients }) => {
             }}
       key={ig.name}>{ig.name} ({ig.amount})</span>
   })
+  const orderDetailsHandler = () => {
+    history.push(`${history.location.pathname}/${id}`)
+  }
   return (
     <div className={classes.Order}>
-      <p>Ingredients: {ingredientOutput}</p>
-      <p>Price: <strong>USD {price.toFixed(2)}</strong></p>
+        <div className="Order__info">
+          <p>Ingredients: {ingredientOutput}</p>
+          <p>Price: <strong>USD {price.toFixed(2)}</strong></p>
+        </div>
+        <div className="Order__actions">
+          <Button btnType="Success-type-2" clicked={orderDetailsHandler}>Details</Button>
+          <Button btnType="Danger-type-2" clicked={deleteOrderHandler}>Delete</Button>
+        </div>
     </div>
   )
 }
 
-export default Order;
+export default withRouter(Order);

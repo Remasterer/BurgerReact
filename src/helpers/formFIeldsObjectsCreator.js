@@ -21,8 +21,10 @@ export  default function createFormField(el, elType, elOptions, elValidation = u
       };
       break;
     case 'select':
+      const argumentsFromFirst = [...arguments].splice(1)
+      formField.value = argumentsFromFirst[0];
       formField.elementConfig = {
-        options: [...arguments].splice(1).map( (item) => {
+        options: argumentsFromFirst.map( (item) => {
           return {
             value: item,
             displayValue: item[0].toUpperCase() + item.slice(1)
@@ -31,8 +33,6 @@ export  default function createFormField(el, elType, elOptions, elValidation = u
       }
       break;
   }
-
-
 
   return formField;
 }
