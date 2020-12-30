@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './NavigationItems.module.css'
 import NavigationItem from "./NavigationItem/NavigationItem";
 
-const NavigationsItems = ({isAuthenticated}) => (
+const NavigationItems = ({isAuthenticated}) => (
   <ul className={classes.NavigationItems}>
     <NavigationItem link="/burger">Burger builder</NavigationItem>
     { isAuthenticated
@@ -15,4 +15,4 @@ const NavigationsItems = ({isAuthenticated}) => (
       </ul>
 );
 
-export default NavigationsItems;
+export default NavigationItems;

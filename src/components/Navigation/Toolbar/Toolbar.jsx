@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './Toolbar.module.css'
 import Logo from "../../Logo/Logo";
-import NavigationsItems from "../NavigationItems/NavigationsItems";
+import NavigationItems from "../NavigationItems/NavigationItems";
 import DrawToggle from "./DrawToggler/DrawToggle";
 
 const Toolbar = ({toggleSideDrawer, isAuth}) => (
@@ -11,7 +11,7 @@ const Toolbar = ({toggleSideDrawer, isAuth}) => (
       <Logo />
     </div>
     <nav className={classes.DesktopOnly}>
-      <NavigationsItems isAuthenticated={isAuth} />
+      <NavigationItems isAuthenticated={isAuth} />
     </nav>
   </header>
 );

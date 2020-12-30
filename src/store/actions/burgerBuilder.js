@@ -24,7 +24,7 @@ export const fetchIngredientsFailed = () => {
 
 export const initIngredients = () => {
   return  dispatch =>  {
-      axios.get('https://buegerreact.firebaseio.com/ingredients.json')
+      axios.get('https://cookingmachine-c5227.firebaseio.com/ingredients.json')
         .then(response => {
           dispatch((setIngredients(response.data)))
         }).catch(error => {
